@@ -1,0 +1,9 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Seen Live"></Label>
+    <NavigationButton *ngIf="showBackButton === true"
+                      (tap)="goBack()"
+                      text="Go Back"
+                      android.systemIcon="ic_menu_back">
+
+    </NavigationButton>
+</ActionBar>

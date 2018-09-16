@@ -1,0 +1,10 @@
+.artist {
+    height: 150px;
+    border-width: 1px;
+    border-color: black;
+    width: 100%;
+}
+.artist__name {
+    padding: 0 10px;
+}
+

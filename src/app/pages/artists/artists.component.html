@@ -1,0 +1,20 @@
+<ns-action-bar
+        [showBackButton]="false"
+></ns-action-bar>
+<StackLayout>
+    <SearchBar hint="Type artist name"
+               (textChange)="onTextChanged($event)"
+    ></SearchBar>
+    <ScrollView orientation="vertical">
+        <StackLayout>
+            <FlexboxLayout *ngFor="let artist of artists"
+                           (tap)="seeDetails(artist.artistId)"
+                           alignItems="center"
+                           class="artist">
+                <Label class="artist__name" [text]="artist.name"></Label>
+            </FlexboxLayout>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>
+
+

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Artist} from "./artist.model";
-import {RestService} from "~/app/pages/common/services/rest.service";
 
-import artists from "~/app/pages/common/data/artists";
+import artists from "~/app/common/data/artists";
+import {RestService} from "~/app/common/services/rest.service";
 
 @Injectable()
 export class ArtistsService {

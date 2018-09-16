@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
-import {DataService} from "~/app/pages/common/services/data.service";
-
-import {Details} from "~/app/pages/artists/artist.model";
+import {DataService} from "~/app/common/services/data.service";
+import {Details} from "~/app/artists/artist.model";
 
 @Injectable()
 export class RestService {

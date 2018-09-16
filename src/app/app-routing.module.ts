@@ -2,8 +2,9 @@ import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
-import {ArtistsComponent} from "~/app/pages/artists/artists.component";
-import {ArtistComponent} from "~/app/pages/artists/artist/artist.component";
+import {ArtistsComponent} from "~/app/artists/artists.component";
+import {ArtistComponent} from "~/app/artists/artist/artist.component";
+
 
 
 const routes: Routes = [

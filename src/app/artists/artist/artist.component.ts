@@ -3,10 +3,9 @@ import {PageRoute} from "nativescript-angular/router";
 import {switchMap} from "rxjs/operators";
 import * as utils from "utils/utils";
 
-import {Artist} from "~/app/pages/artists/artist.model";
+import {ArtistsService} from "~/app/artists/artists.service";
 
-import {ArtistsService} from "~/app/pages/artists/artists.service";
-
+import {Artist} from "~/app/artists/artist.model";
 
 @Component({
     moduleId: module.id,

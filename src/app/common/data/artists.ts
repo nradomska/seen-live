@@ -444,7 +444,7 @@ const artists = [
         "artistId": 40
     },
     {
-        "name": "First AartistId Kit",
+        "name": "First Aid Kit",
         "places": [
             {
                 "name": "Rock Werchter",

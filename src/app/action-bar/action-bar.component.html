@@ -1,5 +1,5 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Seen Live"></Label>
+    <Label class="action-bar-title" [text]="title"></Label>
     <NavigationButton *ngIf="showBackButton === true"
                       (tap)="goBack()"
                       text="Go Back"

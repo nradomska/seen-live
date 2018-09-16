@@ -1,0 +1,22 @@
+<ns-action-bar
+        [showBackButton]="true"
+        [title]="'Search for artists'"
+></ns-action-bar>
+<StackLayout padding="40">
+    <TextField [(ngModel)]="artist.name"
+               (textChange)="getArtistsList($event)"
+               hint="Artist name" class="form-control"></TextField>
+    <StackLayout>
+        <ScrollView orientation="vertical">
+            <StackLayout>
+                <FlexboxLayout *ngFor="let hint of hints"
+                               (tap)="addArtist(hint)"
+                               alignItems="center"
+                               class="artist">
+                    <Label class="artist__name" [text]="hint.name"></Label>
+                </FlexboxLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</StackLayout>
+

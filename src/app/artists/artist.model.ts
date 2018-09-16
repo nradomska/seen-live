@@ -12,7 +12,7 @@ export class Artist {
 
         this.artistId = artistId;
         this.name = name;
-        this.details;
+        this.details = details;
         this.places = places;
     }
 }

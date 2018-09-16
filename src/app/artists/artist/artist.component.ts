@@ -45,5 +45,6 @@ export class ArtistComponent implements OnInit {
 
     addPlace() {
         //TODO
+        alert('TODO');
     }
 }

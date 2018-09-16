@@ -1,9 +1,10 @@
 <ns-action-bar
         [showBackButton]="true"
+        [title]="'Artist detail'"
 ></ns-action-bar>
 <AbsoluteLayout>
     <ScrollView width="100%">
-        <StackLayout class="artist">
+        <StackLayout class="single-artist">
             <AbsoluteLayout *ngIf="artist.details && artist.details.url"
                             (tap)="goToLink(artist.details.url)"
                             width="100%" height="1000px"
@@ -13,7 +14,7 @@
                        width="100%"
                 ></Image>
                 <FlexboxLayout width="100%" height="100%" alignItems="center" justifyContent="center">
-                    <Label class="artist__name"
+                    <Label class="single-artist__name"
                            [text]="artist.name"></Label>
                 </FlexboxLayout>
             </AbsoluteLayout>

@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, ElementRef} from '@angular/core'
+import {Component, OnInit, ViewEncapsulation} from '@angular/core'
 import {RouterExtensions} from 'nativescript-angular/router'
 import {SearchBar} from "ui/search-bar";
 
@@ -10,7 +10,8 @@ import {ArtistsService} from "~/app/artists/artists.service";
     moduleId: module.id,
     selector: 'ns-artists',
     templateUrl: 'artists.component.html',
-    styleUrls: ['./artists.component.css']
+    styleUrls: ['./artists.component.css'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class ArtistsComponent implements OnInit {
 
@@ -45,17 +46,21 @@ export class ArtistsComponent implements OnInit {
     }
 
     seeDetails(artistId: number) {
-        this.routerExtensions.navigate(["/artist/" + artistId], {
+        this.goToPage("/artist/" + artistId);
+    }
+
+    addArtist() {
+        this.goToPage("/add-artist");
+    }
+
+    goToPage(route: string) {
+        this.routerExtensions.navigate([route], {
             transition: {
                 name: "slide",
                 duration: 150,
                 curve: "linear"
             }
         });
-    }
-
-    addArtist() {
-        //TODO
     }
 
     dismissSoftKeybaord(event) {

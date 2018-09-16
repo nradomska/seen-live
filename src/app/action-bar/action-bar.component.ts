@@ -11,6 +11,7 @@ import {RouterExtensions} from 'nativescript-angular/router'
 export class ActionBarComponent implements OnInit {
 
     @Input() showBackButton: boolean;
+    @Input() title: string;
 
     constructor(private routerExtensions: RouterExtensions,) {
     }

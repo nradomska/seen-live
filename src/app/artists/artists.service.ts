@@ -20,7 +20,7 @@ export class ArtistsService {
     }
 
     setArtists(artists: Array<Artist>) {
-        this.artists = artists;
+        this.artists = artists.sort(this.sortByName);
     }
 
     getArtistById(artistId: number): Artist | boolean {
@@ -44,5 +44,43 @@ export class ArtistsService {
                 reject();
             })
         });
+    }
+
+    searchArtists(keyword: string): Promise<any> {
+        return new Promise((resolve, reject) => {
+            this.restService.searchArtists(keyword).subscribe((response)=> {
+                resolve(response['results']['artistmatches']['artist']);
+            }, (error) => {
+                console.log(error);
+                reject();
+            })
+        });
+    }
+
+    getNextArtistId(): number {
+        let orderedArtists = [...this.artists];
+        orderedArtists.sort(this.sortById);
+        return orderedArtists[orderedArtists.length - 1].artistId + 1;
+    }
+
+    addArtist(artist: Artist) {
+        this.getArtists().push(artist);
+        this.artists.sort(this.sortByName);
+    }
+
+    sortByName(a, b) {
+        if (a.name < b.name)
+            return -1;
+        if (a.name > b.name)
+            return 1;
+        return 0;
+    }
+
+    sortById(a, b) {
+        if (a.artistId < b.artistId)
+            return -1;
+        if (a.artistId > b.artistId)
+            return 1;
+        return 0;
     }
 }

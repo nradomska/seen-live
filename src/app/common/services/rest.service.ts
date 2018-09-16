@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
 import {DataService} from "~/app/common/services/data.service";
-import {Details} from "~/app/artists/artist.model";
+import {Details, Artist} from "~/app/artists/artist.model";
 
 @Injectable()
 export class RestService {
@@ -16,6 +16,16 @@ export class RestService {
             '?method=artist.getinfo' +
             '&artist=' + artistName +
             '&api_key=' + this.dataService.getLastFmApiKey() +
+            '&format=json'
+        );
+    }
+
+    searchArtists(keyword: string) {
+        return this.http.get(this.dataService.getLastFmApiUrl() +
+            '?method=artist.search' +
+            '&artist=' + keyword +
+            '&api_key=' + this.dataService.getLastFmApiKey() +
+            '&limit=' + 20 +
             '&format=json'
         );
     }

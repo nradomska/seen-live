@@ -1,14 +1,11 @@
 import {Component, OnInit} from '@angular/core'
 import {PageRoute} from "nativescript-angular/router";
 import {switchMap} from "rxjs/operators";
-
 import * as utils from "utils/utils";
-
 
 import {Artist} from "~/app/pages/artists/artist.model";
 
 import {ArtistsService} from "~/app/pages/artists/artists.service";
-import {topmost} from "tns-core-modules/ui/frame/frame";
 
 
 @Component({
@@ -45,5 +42,9 @@ export class ArtistComponent implements OnInit {
 
     dismissSoftKeybaord() {
         utils.ad.dismissSoftInput();
+    }
+
+    addPlace() {
+        //TODO
     }
 }

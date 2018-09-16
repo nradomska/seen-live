@@ -1,9 +1,11 @@
 <ns-action-bar
         [showBackButton]="false"
 ></ns-action-bar>
-<StackLayout>
+
+<StackLayout width="100%">
     <SearchBar hint="Type artist name"
                (textChange)="onTextChanged($event)"
+               (loaded)="dismissSoftKeybaord($event)"
     ></SearchBar>
     <ScrollView orientation="vertical">
         <StackLayout>
@@ -16,5 +18,8 @@
         </StackLayout>
     </ScrollView>
 </StackLayout>
-
-
+<AbsoluteLayout>
+    <ns-floating-button
+            (buttonClicked)="addArtist($event)"
+    ></ns-floating-button>
+</AbsoluteLayout>

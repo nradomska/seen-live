@@ -2,7 +2,6 @@
         [showBackButton]="true"
 ></ns-action-bar>
 <AbsoluteLayout>
-
     <ScrollView width="100%">
         <StackLayout class="artist">
             <AbsoluteLayout *ngIf="artist.details && artist.details.url"
@@ -31,7 +30,7 @@
             </StackLayout>
         </StackLayout>
     </ScrollView>
-    <StackLayout top="470" left="260">
-        <Button (tap)="fabTap()" text="+" class="floating-button"></Button>
-    </StackLayout>
+    <ns-floating-button
+            (buttonClicked)="addPlace($event)"
+    ></ns-floating-button>
 </AbsoluteLayout>

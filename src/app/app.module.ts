@@ -12,6 +12,7 @@ import {RestService} from "~/app/pages/common/services/rest.service";
 import {ArtistsService} from "~/app/pages/artists/artists.service";
 import {DataService} from "~/app/pages/common/services/data.service";
 import {ActionBarComponent} from "~/app/pages/action-bar/action-bar.component";
+import {FloatingButtonComponent} from "~/app/pages/floating-button/floating-button.component";
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {ActionBarComponent} from "~/app/pages/action-bar/action-bar.component";
         AppComponent,
         ArtistsComponent,
         ArtistComponent,
-        ActionBarComponent
+        ActionBarComponent,
+        FloatingButtonComponent
     ],
     providers: [
         RestService,

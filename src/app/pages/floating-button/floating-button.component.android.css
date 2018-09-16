@@ -1,0 +1,7 @@
+.floating-button {
+    height: 250px;
+    width: 250px;
+    background-color: #ff0200;
+    border-radius: 50%;
+    color: white;
+}  

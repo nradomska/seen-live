@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild, ElementRef} from '@angular/core'
 import {RouterExtensions} from 'nativescript-angular/router'
 import {SearchBar} from "ui/search-bar";
-
+import * as utils from "utils/utils";
 
 import {Artist} from "./artist.model";
 import {ArtistsService} from "~/app/pages/artists/artists.service";
@@ -15,8 +15,7 @@ import {ArtistsService} from "~/app/pages/artists/artists.service";
 })
 export class ArtistsComponent implements OnInit {
 
-    public searchPhrase: string;
-    private artists: Array<Artist>;
+    public artists: Array<Artist>;
 
     constructor(private routerExtensions: RouterExtensions,
                 private artistsService: ArtistsService) {
@@ -49,10 +48,20 @@ export class ArtistsComponent implements OnInit {
     seeDetails(artistId: number) {
         this.routerExtensions.navigate(["/artist/" + artistId], {
             transition: {
-                name: "flip", 
+                name: "flip",
                 duration: 300,
                 curve: "linear"
             }
         });
+    }
+
+    addArtist() {
+        //TODO
+    }
+
+    dismissSoftKeybaord(event) {
+        if (event.object.android) {
+            event.object.android.clearFocus();
+        }
     }
 }
